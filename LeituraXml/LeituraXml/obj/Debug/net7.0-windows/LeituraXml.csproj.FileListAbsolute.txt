@@ -1,0 +1,17 @@
+C:\Desenvolvimento\LeituraXml\LeituraXml\bin\Debug\net7.0-windows\LeituraXml.exe
+C:\Desenvolvimento\LeituraXml\LeituraXml\bin\Debug\net7.0-windows\LeituraXml.deps.json
+C:\Desenvolvimento\LeituraXml\LeituraXml\bin\Debug\net7.0-windows\LeituraXml.runtimeconfig.json
+C:\Desenvolvimento\LeituraXml\LeituraXml\bin\Debug\net7.0-windows\LeituraXml.dll
+C:\Desenvolvimento\LeituraXml\LeituraXml\bin\Debug\net7.0-windows\LeituraXml.pdb
+C:\Desenvolvimento\LeituraXml\LeituraXml\obj\Debug\net7.0-windows\LeituraXml.csproj.AssemblyReference.cache
+C:\Desenvolvimento\LeituraXml\LeituraXml\obj\Debug\net7.0-windows\LeituraXml.GeneratedMSBuildEditorConfig.editorconfig
+C:\Desenvolvimento\LeituraXml\LeituraXml\obj\Debug\net7.0-windows\LeituraXml.AssemblyInfoInputs.cache
+C:\Desenvolvimento\LeituraXml\LeituraXml\obj\Debug\net7.0-windows\LeituraXml.AssemblyInfo.cs
+C:\Desenvolvimento\LeituraXml\LeituraXml\obj\Debug\net7.0-windows\LeituraXml.csproj.CoreCompileInputs.cache
+C:\Desenvolvimento\LeituraXml\LeituraXml\obj\Debug\net7.0-windows\LeituraXml.dll
+C:\Desenvolvimento\LeituraXml\LeituraXml\obj\Debug\net7.0-windows\refint\LeituraXml.dll
+C:\Desenvolvimento\LeituraXml\LeituraXml\obj\Debug\net7.0-windows\LeituraXml.pdb
+C:\Desenvolvimento\LeituraXml\LeituraXml\obj\Debug\net7.0-windows\LeituraXml.genruntimeconfig.cache
+C:\Desenvolvimento\LeituraXml\LeituraXml\obj\Debug\net7.0-windows\ref\LeituraXml.dll
+C:\Desenvolvimento\LeituraXml\LeituraXml\obj\Debug\net7.0-windows\LeituraXml.Form1.resources
+C:\Desenvolvimento\LeituraXml\LeituraXml\obj\Debug\net7.0-windows\LeituraXml.csproj.GenerateResource.cache

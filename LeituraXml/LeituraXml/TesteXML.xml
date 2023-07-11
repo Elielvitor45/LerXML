@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Playlist CompactMode="1">
+	<Break0932M Ins="3" Locked="0">
+		<Ins0 Id="01" CTA="CTA"></Ins0>
+		<Ins1 Id="02" CTA="CTA"></Ins1>
+		<Ins2 Id="03" CTA="CTA"></Ins2>
+	</Break0932M>
+	<Break0935C Ins="3" Locked="0">
+		<Ins0 Id="01" CTA="CTA"></Ins0>
+		<Ins1 Id="02" CTA="CTA"></Ins1>
+		<Ins2 Id="03" CTA="CTA"></Ins2>
+	</Break0935C>
+</Playlist>
