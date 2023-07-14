@@ -67,7 +67,7 @@ namespace LeituraXml.Utils
 
                 foreach (string attributeName in attributeNames)
                 {
-                    string attributeValue = item.Attributes[attributeName].Value;
+                    string attributeValue = item.Attributes[attributeName]?.Value;
                     if (string.IsNullOrEmpty(attributeValue))
                     {
                         attributeValue = "Null";
@@ -101,6 +101,19 @@ namespace LeituraXml.Utils
 
 
         }
+
+        public bool Comparar(List<string > listcomp, string comp)
+        {
+            foreach (var item in listcomp)
+            {
+                if (item.Equals(comp))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
 
         public List<XmlNode> GetAllIns(List<XmlNode> list)
         {
