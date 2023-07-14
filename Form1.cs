@@ -31,13 +31,38 @@ namespace LeituraXml
         private void button1_Click_1(object sender, EventArgs e)
         {
 
-                string caminhoCompleto = @textBox1.Text;
 
+            if (String.IsNullOrEmpty(textBox1.Text))
+            {
+                MessageBox.Show("Caminho não pode ser Vazio","Aviso", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return;
+            }
+                string caminhoCompleto = @textBox1.Text;
+                
 
                 caminhoCompleto += @"\Montagem";
+
+            int day, month, year;
+            string caminhoArquivo;
+            if ((int.TryParse(textday.Text, out day) && int.TryParse(textmounth.Text, out month) && int.TryParse(textyear.Text, out year)))
+            {
+                // Os valores são números inteiros, você pode continuar construindo as strings
                 string nomearquivo = @"\" + $"{textday.Text}-{textmounth.Text}-{textyear.Text}" + ".zip";
                 caminhoCompleto += nomearquivo;
-                string caminhoArquivo = @$"{textday.Text}-{textmounth.Text}-{textyear.Text}.xml";
+                caminhoArquivo = @$"{textday.Text}-{textmounth.Text}-{textyear.Text}.xml";
+
+                // Restante do código para lidar com o caso em que os campos contêm números
+            }
+            else
+            {
+
+                MessageBox.Show("A Data não pode ser vazia", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            
+                
+
+
 
 
 
