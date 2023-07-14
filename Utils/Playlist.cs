@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
+using System.Numerics;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
@@ -18,37 +22,39 @@ namespace LeituraXml.Utils
             XmlNodeList listadenos = doc.SelectNodes(no);
             return listadenos;
         }
-        public XmlDocument XmlDocumento(String caminho) {
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);//Super necessario
-            XmlDocument doc = new XmlDocument();
-            doc.Load(caminho);
-            return doc;
-        }
+        public XmlDocument XmlDocumento(String FileZIP,string NameArchive) {
+            XmlDocument xmlDocument = new XmlDocument();
 
+            using (FileStream zipToOpen = new FileStream(FileZIP, FileMode.Open))
+            {
+                using (ZipArchive archive = new ZipArchive(zipToOpen, ZipArchiveMode.Read))
+                {
+                    ZipArchiveEntry xmlEntry = archive.GetEntry(NameArchive);
+                    if (xmlEntry != null)
+                    {
+                        using (Stream xmlStream = xmlEntry.Open())
+                        {
+                            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+                            xmlDocument.Load(xmlStream);
+
+                   
+                        }
+                    }
+                    else
+                    {
+                    }
+                }
+            }
+           
+
+
+           //Super necessario
+            return xmlDocument;
+        }
         public void setBreaks(List <XmlNode>list)
         {
 
-            /*foreach (var item in listIns)
-            {
-                Ins objins = new Ins();
-
-                string[] attributeNames = { "Id", "CTA", "Source", "PtLoc", "MovedTo", "Type", "Title", "File", "Folder", "Text", "Checked", "Err", "sErr", "HoraAudio", "HoraPK", "IsAudioFile", "DurOrig", "Dur", "Refr", "DurRefr", "PtVh", "PtMx", "MxIni", "Intro", "Vol", "Bitrate", "Reg", "MD5" };
-
-                foreach (string attributeName in attributeNames)
-                {
-                    string attributeValue = item.Attributes[attributeName]?.Value;
-                    if (string.IsNullOrEmpty(attributeValue))
-                    {
-                        attributeValue = "Null";
-                    }
-                    typeof(Ins).GetProperty(attributeName).SetValue(objins, attributeValue);
-                }
-
-                objLista.Add(objins);
-
-            }*/
-
-
+       
 
 
             foreach (var item in list)
