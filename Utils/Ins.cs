@@ -3,13 +3,57 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace LeituraXml.Utils
 {
     public class Ins
     {
-       
+      
+        public List<Ins> getObjIns(List<XmlNode> listIns)
+        {
+            List<Ins> objLista = new List<Ins>();
+            foreach (var item in listIns)
+            {
+                Ins objins = new Ins();
+
+                string[] attributeNames = { "Id", "CTA", "Source", "MovedTo", "Type", "Title", "File", "Folder", "Text", "Composer", "Comment", "Checked", "Err", "sErr", "HoraAudio", "HoraPK", "IsAudioFile", "DurOrig", "Dur", "Refr", "DurRefr", "PtVh", "PtMx", "MxIni", "Intro", "PtLoc", "Vol", "Bitrate", "Reg", "MD5" };
+
+                foreach (string attributeName in attributeNames)
+                {
+                    string attributeValue = item.Attributes[attributeName]?.Value;
+                    if (string.IsNullOrEmpty(attributeValue))
+                    {
+                        attributeValue = "Null";
+                    }
+                    typeof(Ins).GetProperty(attributeName).SetValue(objins, attributeValue);
+                }
+                objLista.Add(objins);
+            }
+            return objLista;
+        }
+
+
+
+        public List<XmlNode> GetAllIns(List<XmlNode> list)
+        {
+            List<XmlNode> listains = new List<XmlNode>();
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list.Count > 0)
+                {
+                    foreach (XmlNode childNode in list[i].ChildNodes)
+                    {
+                        if (childNode.Name.StartsWith("Ins"))
+                        {
+                            listains.Add(childNode);
+                        }
+                    }
+                }
+            }
+            return listains;
+        }
         public string Id { get; set; }
         public string CTA { get; set; }
         public string Source { get; set; }
@@ -40,6 +84,5 @@ namespace LeituraXml.Utils
         public string Bitrate { get; set; }
         public string Reg { get; set; }
         public string MD5 { get; set; }
-
     }
 }
