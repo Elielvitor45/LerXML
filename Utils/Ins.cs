@@ -10,7 +10,6 @@ namespace LeituraXml.Utils
 {
     public class Ins
     {
-      
         public List<Ins> getObjIns(List<XmlNode> listIns)
         {
             List<Ins> objLista = new List<Ins>();
@@ -33,9 +32,6 @@ namespace LeituraXml.Utils
             }
             return objLista;
         }
-
-
-
         public List<XmlNode> GetAllIns(List<XmlNode> list)
         {
             List<XmlNode> listains = new List<XmlNode>();

@@ -80,11 +80,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textday = new System.Windows.Forms.TextBox();
-            this.textmounth = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textyear = new System.Windows.Forms.TextBox();
+            this.date1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -418,64 +414,24 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Data do Arquivo Montagem:";
             // 
-            // textday
+            // date1
             // 
-            this.textday.Location = new System.Drawing.Point(465, 384);
-            this.textday.Name = "textday";
-            this.textday.Size = new System.Drawing.Size(24, 23);
-            this.textday.TabIndex = 7;
-            this.textday.Text = "dd";
-            // 
-            // textmounth
-            // 
-            this.textmounth.Location = new System.Drawing.Point(520, 384);
-            this.textmounth.Name = "textmounth";
-            this.textmounth.Size = new System.Drawing.Size(24, 23);
-            this.textmounth.TabIndex = 8;
-            this.textmounth.Text = "mm";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(495, 383);
-            this.label3.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label3.MinimumSize = new System.Drawing.Size(15, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 25);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "/";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(550, 383);
-            this.label4.MaximumSize = new System.Drawing.Size(50, 50);
-            this.label4.MinimumSize = new System.Drawing.Size(15, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(19, 25);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "/";
-            // 
-            // textyear
-            // 
-            this.textyear.Location = new System.Drawing.Point(575, 383);
-            this.textyear.Name = "textyear";
-            this.textyear.Size = new System.Drawing.Size(31, 23);
-            this.textyear.TabIndex = 11;
-            this.textyear.Text = "yyyy";
+            this.date1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.date1.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.date1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.date1.Location = new System.Drawing.Point(465, 383);
+            this.date1.Name = "date1";
+            this.date1.Size = new System.Drawing.Size(98, 23);
+            this.date1.TabIndex = 12;
+            this.date1.Value = new System.DateTime(2023, 7, 18, 0, 0, 0, 0);
+            this.date1.ValueChanged += new System.EventHandler(this.date1_ValueChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 450);
-            this.Controls.Add(this.textyear);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textmounth);
-            this.Controls.Add(this.textday);
+            this.Controls.Add(this.date1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -544,10 +500,6 @@
         private TextBox textBox1;
         private Label label1;
         private Label label2;
-        private TextBox textday;
-        private TextBox textmounth;
-        private Label label3;
-        private Label label4;
-        private TextBox textyear;
+        private DateTimePicker date1;
     }
 }
