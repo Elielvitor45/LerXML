@@ -77,20 +77,22 @@
             this.Column39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.date1 = new System.Windows.Forms.DateTimePicker();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(12, 412);
+            this.button1.Location = new System.Drawing.Point(805, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(787, 26);
+            this.button1.Size = new System.Drawing.Size(98, 26);
             this.button1.TabIndex = 2;
             this.button1.Text = "Ler XML";
             this.button1.UseVisualStyleBackColor = false;
@@ -98,6 +100,8 @@
             // 
             // dataGrid1
             // 
+            this.dataGrid1.AllowUserToDeleteRows = false;
+            this.dataGrid1.AllowUserToOrderColumns = true;
             this.dataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Breaks,
@@ -389,59 +393,68 @@
             this.Column1.HeaderText = "A_MD5";
             this.Column1.Name = "Column1";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(167, 383);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 386);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 15);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Caminho Da Pasta PGM:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(301, 387);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(158, 15);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Data do Arquivo Montagem:";
-            // 
             // date1
             // 
             this.date1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.date1.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.date1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.date1.Location = new System.Drawing.Point(465, 383);
+            this.date1.Location = new System.Drawing.Point(805, 44);
             this.date1.Name = "date1";
             this.date1.Size = new System.Drawing.Size(98, 23);
             this.date1.TabIndex = 12;
             this.date1.Value = new System.DateTime(2023, 7, 18, 0, 0, 0, 0);
-            this.date1.ValueChanged += new System.EventHandler(this.date1_ValueChanged);
+            // 
+            // folderBrowserDialog1
+            // 
+            this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Location = new System.Drawing.Point(803, 302);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 26);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Pasta PGM";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(803, 334);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.TabIndex = 14;
+            this.textBox1.TextChanged += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ImageLocation = "C:\\Desenvolvimento\\LeituraXml\\LeituraXml\\XmlImage.png";
+            this.pictureBox1.Location = new System.Drawing.Point(805, 82);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(95, 214);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 450);
-            this.Controls.Add(this.date1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(908, 369);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.date1);
             this.Controls.Add(this.dataGrid1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LeitorMontagemXML";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.VisibleChanged += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -497,9 +510,10 @@
         private DataGridViewTextBoxColumn Column39;
         private DataGridViewTextBoxColumn Column40;
         private DataGridViewTextBoxColumn Column1;
-        private TextBox textBox1;
-        private Label label1;
-        private Label label2;
         private DateTimePicker date1;
+        private FolderBrowserDialog folderBrowserDialog1;
+        private Button button2;
+        private TextBox textBox1;
+        private PictureBox pictureBox1;
     }
 }
