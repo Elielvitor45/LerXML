@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.IO;
@@ -18,21 +19,19 @@ namespace LeituraXml.Utils
 {
     public class Playlist
     {
-        public DataGridView dataGrid { get; set; }
         public string caminho { get; set; }
         public string day { get; set; }
         public string mounth { get; set; }
         public string year { get; set; }
-        public Playlist(string caminho, string day, string mounth, string year, DataGridView datagrid)
+        public Playlist(string caminho, string day, string mounth, string year)
         {
             this.caminho = caminho;
             this.day = day;
             this.mounth = mounth;
             this.year = year;
-            this.dataGrid = datagrid;
         }
         //utilizar esse metodo precisa de split
-        public string setpath(string caminho,string dayS,string monthS,string yearS)
+        public string getpath(string caminho,string dayS,string monthS,string yearS)
         {
             if (String.IsNullOrEmpty(caminho))
             {
@@ -57,7 +56,7 @@ namespace LeituraXml.Utils
         }
         //Objeto que guarda o xml todo
         XmlDocument xmlDocument = new XmlDocument();
-        public void getXmlDocument(String FileZIP,string NameArchive) {
+        public void readXmlDocument(String FileZIP,string NameArchive) {
             try
             {
                 if (!File.Exists(FileZIP))
@@ -93,77 +92,26 @@ namespace LeituraXml.Utils
         }
         public XmlNodeList getXmlNodeList()
         {
-       
             XmlNodeList NodeList = xmlDocument.SelectNodes("//Playlist/*");
             return NodeList;
-        }        
-        public void AddGridView(List<XmlNode> listBreak, List<XmlNode> listIns, List<Break> listobjBreak, List<Ins> listObjIns ) {
-            dataGrid.Rows.Clear();
-            int count = 0;
-            for (int i = 0; i < listBreak.Count; i++)
-            {
-                for (int j = 0; j < int.Parse(listobjBreak[i].Ins); j++)
-                {
-                    DataGridViewRow row = new DataGridViewRow();
-                    row.CreateCells(dataGrid);
-                    row.Cells[0].Value = listBreak[i].Name;
-                    row.Cells[1].Value = listobjBreak[i]?.Ins;
-                    row.Cells[2].Value = listobjBreak[i]?.Locked;
-                    row.Cells[3].Value = listobjBreak[i]?.Changed;
-                    row.Cells[4].Value = listobjBreak[i]?.Filetime;
-                    row.Cells[5].Value = listobjBreak[i]?.Filetime2;
-                    row.Cells[6].Value = listobjBreak[i]?.Time;
-                    row.Cells[7].Value = listobjBreak[i]?.Type;
-                    row.Cells[8].Value = listobjBreak[i]?.Id;
-                    row.Cells[9].Value = listobjBreak[i]?.Id_Edited;
-                    row.Cells[10].Value = listobjBreak[i]?.Fixo;
-                    row.Cells[11].Value = listobjBreak[i]?.Descarte;
-                    row.Cells[12].Value = listobjBreak[i]?.Net;
-                    row.Cells[13].Value = listobjBreak[i]?.Dur;
-                    row.Cells[14].Value = listobjBreak[i]?.Slots;
-                    row.Cells[15].Value = listobjBreak[i]?.Orig;
-                    row.Cells[16].Value = listIns[count].Name;
-                    row.Cells[17].Value = listObjIns[count]?.Id;
-                    row.Cells[18].Value = listObjIns[count]?.CTA;
-                    row.Cells[19].Value = listObjIns[count]?.Source;
-                    row.Cells[20].Value = listObjIns[count]?.MovedTo;
-                    row.Cells[21].Value = listObjIns[count]?.Type;
-                    row.Cells[22].Value = listObjIns[count]?.Title;
-                    row.Cells[23].Value = listObjIns[count]?.File;
-                    row.Cells[24].Value = listObjIns[count]?.Folder;
-                    row.Cells[25].Value = listObjIns[count]?.Text;
-                    row.Cells[26].Value = listObjIns[count]?.Composer;
-                    row.Cells[27].Value = listObjIns[count]?.Comment;
-                    row.Cells[28].Value = listObjIns[count]?.Checked;
-                    row.Cells[29].Value = listObjIns[count]?.Err;
-                    row.Cells[30].Value = listObjIns[count]?.sErr;
-                    row.Cells[31].Value = listObjIns[count]?.HoraAudio;
-                    row.Cells[32].Value = listObjIns[count]?.HoraPK;
-                    row.Cells[33].Value = listObjIns[count]?.IsAudioFile;
-                    row.Cells[34].Value = listObjIns[count]?.DurOrig;
-                    row.Cells[35].Value = listObjIns[count]?.Dur;
-                    row.Cells[36].Value = listObjIns[count]?.Refr;
-                    row.Cells[37].Value = listObjIns[count]?.DurRefr;
-                    row.Cells[38].Value = listObjIns[count]?.PtVh;
-                    row.Cells[39].Value = listObjIns[count]?.PtMx;
-                    row.Cells[40].Value = listObjIns[count]?.MxIni;
-                    row.Cells[41].Value = listObjIns[count]?.Intro;
-                    row.Cells[42].Value = listObjIns[count]?.PtLoc;
-                    row.Cells[43].Value = listObjIns[count]?.Vol;
-                    row.Cells[44].Value = listObjIns[count]?.Bitrate;
-                    row.Cells[45].Value = listObjIns[count]?.Reg;
-                    row.Cells[46].Value = listObjIns[count]?.MD5;
-                    dataGrid.Rows.Add(row);
-                    count++;
-                }
-            }
         }
-        public void Init()
+        public List<Break> getListObjBreaks(List<XmlNode> list)
         {
-            if (setpath(caminho, day, mounth, year) != null) {
+            List<Break> listObjBreak = new List<Break>();
+            Break objBreak01 = new Break();
+            foreach (var item in list)
+            {
+                Break objBreak02 = new Break(item,objBreak01.GetListXmlIns(item));   
+                listObjBreak.Add(objBreak02);
+            }
+            return listObjBreak;
+        }
+        public List<Break> Init()
+        {
+            if (getpath(caminho, day, mounth, year) != null) {
                 //Carrega o arquivo xml
-                string[] caminhoCompleto = setpath(caminho, day, mounth, year).Split("%");
-                getXmlDocument(caminhoCompleto[0], caminhoCompleto[1]);
+                string[] caminhoCompleto = getpath(caminho, day, mounth, year).Split("%");
+                readXmlDocument(caminhoCompleto[0], caminhoCompleto[1]);
                 //lista com todos os nós do xml
                 XmlNodeList listXML = getXmlNodeList();
                 //instancia das Listas
@@ -173,23 +121,19 @@ namespace LeituraXml.Utils
                 List<Ins> listObjIns = new List<Ins>();
                 //Instancia dos Objetos
                 Break objBreak = new Break();
-                Ins objIns = new Ins();
                 //ListasXMl
                 listBreak = objBreak.getXmlBreakNodeList(listXML);
-                listIns = objIns.GetAllIns(listBreak);
                 //ListasObjetos
-                listObjBreak = objBreak.getBreaks(listBreak);
-                listObjIns = objIns.getObjIns(listIns);
-                if (dataGrid != null)
-                {
-                    AddGridView(listBreak, listIns, listObjBreak, listObjIns);
-                }
-                else
-                {
-                    MessageBox.Show("Erro Grid", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                listObjBreak = getListObjBreaks(listBreak);
+                return listObjBreak;
             }
-            else { }
+            else
+            {
+
+                return null;
+            }
         }   
     }
 }
+
+                    

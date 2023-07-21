@@ -10,46 +10,23 @@ namespace LeituraXml.Utils
 {
     public class Ins
     {
-        public List<Ins> getObjIns(List<XmlNode> listIns)
-        {
-            List<Ins> objLista = new List<Ins>();
-            foreach (var item in listIns)
-            {
-                Ins objins = new Ins();
-
-                string[] attributeNames = { "Id", "CTA", "Source", "MovedTo", "Type", "Title", "File", "Folder", "Text", "Composer", "Comment", "Checked", "Err", "sErr", "HoraAudio", "HoraPK", "IsAudioFile", "DurOrig", "Dur", "Refr", "DurRefr", "PtVh", "PtMx", "MxIni", "Intro", "PtLoc", "Vol", "Bitrate", "Reg", "MD5" };
-
+        public Ins(XmlNode listIns) {
+                
+            string[] attributeNames = {"Id", "CTA", "Source", "MovedTo", "Type", "Title", "File", "Folder", "Text", "Composer", "Comment", "Checked", "Err", "sErr", "HoraAudio", "HoraPK", "IsAudioFile", "DurOrig", "Dur", "Refr", "DurRefr", "PtVh", "PtMx", "MxIni", "Intro", "PtLoc", "Vol", "Bitrate", "Reg", "MD5" };
                 foreach (string attributeName in attributeNames)
                 {
-                    string attributeValue = item.Attributes[attributeName]?.Value;
+                    string attributeValue = listIns.Attributes[attributeName]?.Value;
                     if (string.IsNullOrEmpty(attributeValue))
                     {
-                        attributeValue = "Null";
+                        attributeValue = "";
                     }
-                    typeof(Ins).GetProperty(attributeName).SetValue(objins, attributeValue);
+                    typeof(Ins).GetProperty(attributeName).SetValue(this, attributeValue);
                 }
-                objLista.Add(objins);
-            }
-            return objLista;
+
+            this.NameI = listIns.Name;
         }
-        public List<XmlNode> GetAllIns(List<XmlNode> list)
-        {
-            List<XmlNode> listains = new List<XmlNode>();
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (list.Count > 0)
-                {
-                    foreach (XmlNode childNode in list[i].ChildNodes)
-                    {
-                        if (childNode.Name.StartsWith("Ins"))
-                        {
-                            listains.Add(childNode);
-                        }
-                    }
-                }
-            }
-            return listains;
-        }
+
+        public string NameI { get; set; }
         public string Id { get; set; }
         public string CTA { get; set; }
         public string Source { get; set; }
@@ -81,4 +58,6 @@ namespace LeituraXml.Utils
         public string Reg { get; set; }
         public string MD5 { get; set; }
     }
+
+    
 }

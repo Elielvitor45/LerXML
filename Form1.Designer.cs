@@ -30,58 +30,58 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.dataGrid1 = new System.Windows.Forms.DataGridView();
-            this.Breaks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.A_Ins = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Atributo_Locked = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Atributo_Changed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Atributo_Filetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Atributo_Filetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date1 = new System.Windows.Forms.DateTimePicker();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.NameB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Ins = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Atributo_Locked = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Atributo_Changed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Atributo_Filetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Atributo_Filetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_TypeB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_IdB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Id_Edited = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Fixo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Descarte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Net = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_DurB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Slots = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Orig = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Inserções = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_CTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Source = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_MovedTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_File = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Folder = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Text = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Composer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Checked = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Err = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_sErr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_HoraAudio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_HoraPK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_IsAudioFile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_DurOrig = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Dur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Refr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_DurRefr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_PtVh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_PtMx = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_MxIni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Intro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_PtLoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Vol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Bitrate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_Reg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A_MD5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -104,294 +104,59 @@
             this.dataGrid1.AllowUserToOrderColumns = true;
             this.dataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Breaks,
+            this.NameB,
             this.A_Ins,
             this.Atributo_Locked,
             this.Atributo_Changed,
             this.Atributo_Filetime,
             this.Atributo_Filetime2,
-            this.Column2,
-            this.Column3,
-            this.Column41,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14,
-            this.Column15,
-            this.Column16,
-            this.Column17,
-            this.Column18,
-            this.Column19,
-            this.Column20,
-            this.Column21,
-            this.Column22,
-            this.Column23,
-            this.Column24,
-            this.Column25,
-            this.Column26,
-            this.Column27,
-            this.Column28,
-            this.Column29,
-            this.Column30,
-            this.Column31,
-            this.Column32,
-            this.Column33,
-            this.Column34,
-            this.Column35,
-            this.Column36,
-            this.Column37,
-            this.Column38,
-            this.Column39,
-            this.Column40,
-            this.Column1});
+            this.A_Time,
+            this.A_TypeB,
+            this.A_IdB,
+            this.A_Id_Edited,
+            this.A_Fixo,
+            this.A_Descarte,
+            this.A_Net,
+            this.A_DurB,
+            this.A_Slots,
+            this.A_Orig,
+            this.Inserções,
+            this.A_Id,
+            this.A_CTA,
+            this.A_Source,
+            this.A_MovedTo,
+            this.A_Type,
+            this.A_Title,
+            this.A_File,
+            this.A_Folder,
+            this.A_Text,
+            this.A_Composer,
+            this.A_Comment,
+            this.A_Checked,
+            this.A_Err,
+            this.A_sErr,
+            this.A_HoraAudio,
+            this.A_HoraPK,
+            this.A_IsAudioFile,
+            this.A_DurOrig,
+            this.A_Dur,
+            this.A_Refr,
+            this.A_DurRefr,
+            this.A_PtVh,
+            this.A_PtMx,
+            this.A_MxIni,
+            this.A_Intro,
+            this.A_PtLoc,
+            this.A_Vol,
+            this.A_Bitrate,
+            this.A_Reg,
+            this.A_MD5});
             this.dataGrid1.Location = new System.Drawing.Point(12, 12);
             this.dataGrid1.Name = "dataGrid1";
             this.dataGrid1.RowTemplate.Height = 25;
             this.dataGrid1.Size = new System.Drawing.Size(787, 348);
             this.dataGrid1.TabIndex = 3;
             this.dataGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Breaks
-            // 
-            this.Breaks.HeaderText = "Breaks";
-            this.Breaks.Name = "Breaks";
-            // 
-            // A_Ins
-            // 
-            this.A_Ins.HeaderText = "A_Ins";
-            this.A_Ins.Name = "A_Ins";
-            // 
-            // Atributo_Locked
-            // 
-            this.Atributo_Locked.HeaderText = "A_Locked";
-            this.Atributo_Locked.Name = "Atributo_Locked";
-            // 
-            // Atributo_Changed
-            // 
-            this.Atributo_Changed.HeaderText = "A_Changed";
-            this.Atributo_Changed.Name = "Atributo_Changed";
-            // 
-            // Atributo_Filetime
-            // 
-            this.Atributo_Filetime.HeaderText = "A_Filetime";
-            this.Atributo_Filetime.Name = "Atributo_Filetime";
-            // 
-            // Atributo_Filetime2
-            // 
-            this.Atributo_Filetime2.HeaderText = "A_Filetime2";
-            this.Atributo_Filetime2.Name = "Atributo_Filetime2";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "A_Time";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "A_Type";
-            this.Column3.Name = "Column3";
-            // 
-            // Column41
-            // 
-            this.Column41.HeaderText = "A_Id";
-            this.Column41.Name = "Column41";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "A_Id_Edited";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "A_Fixo";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "A_Descarte";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "A_Net";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "A_Dur";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "A_Slots";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "A_Orig";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Inserções";
-            this.Column11.Name = "Column11";
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "A_Id";
-            this.Column12.Name = "Column12";
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "A_CTA";
-            this.Column13.Name = "Column13";
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "A_Source";
-            this.Column14.Name = "Column14";
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "A_MovedTo";
-            this.Column15.Name = "Column15";
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "A_Type";
-            this.Column16.Name = "Column16";
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "A_Title";
-            this.Column17.Name = "Column17";
-            // 
-            // Column18
-            // 
-            this.Column18.HeaderText = "A_File";
-            this.Column18.Name = "Column18";
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "A_Folder";
-            this.Column19.Name = "Column19";
-            // 
-            // Column20
-            // 
-            this.Column20.HeaderText = "A_Text";
-            this.Column20.Name = "Column20";
-            // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "A_Composer";
-            this.Column21.Name = "Column21";
-            // 
-            // Column22
-            // 
-            this.Column22.HeaderText = "A_Comment";
-            this.Column22.Name = "Column22";
-            // 
-            // Column23
-            // 
-            this.Column23.HeaderText = "A_Checked";
-            this.Column23.Name = "Column23";
-            // 
-            // Column24
-            // 
-            this.Column24.HeaderText = "A_Err";
-            this.Column24.Name = "Column24";
-            // 
-            // Column25
-            // 
-            this.Column25.HeaderText = "A_sErr";
-            this.Column25.Name = "Column25";
-            // 
-            // Column26
-            // 
-            this.Column26.HeaderText = "A_HoraAudio";
-            this.Column26.Name = "Column26";
-            // 
-            // Column27
-            // 
-            this.Column27.HeaderText = "A_HoraPK";
-            this.Column27.Name = "Column27";
-            // 
-            // Column28
-            // 
-            this.Column28.HeaderText = "A_IsAudioFile";
-            this.Column28.Name = "Column28";
-            // 
-            // Column29
-            // 
-            this.Column29.HeaderText = "A_DurOrig";
-            this.Column29.Name = "Column29";
-            // 
-            // Column30
-            // 
-            this.Column30.HeaderText = "A_Dur";
-            this.Column30.Name = "Column30";
-            // 
-            // Column31
-            // 
-            this.Column31.HeaderText = "A_Refr";
-            this.Column31.Name = "Column31";
-            // 
-            // Column32
-            // 
-            this.Column32.HeaderText = "A_DurRefr";
-            this.Column32.Name = "Column32";
-            // 
-            // Column33
-            // 
-            this.Column33.HeaderText = "A_PtVh";
-            this.Column33.Name = "Column33";
-            // 
-            // Column34
-            // 
-            this.Column34.HeaderText = "A_PtMx";
-            this.Column34.Name = "Column34";
-            // 
-            // Column35
-            // 
-            this.Column35.HeaderText = "A_MxIni";
-            this.Column35.Name = "Column35";
-            // 
-            // Column36
-            // 
-            this.Column36.HeaderText = "A_Intro";
-            this.Column36.Name = "Column36";
-            // 
-            // Column37
-            // 
-            this.Column37.HeaderText = "A_PtLoc";
-            this.Column37.Name = "Column37";
-            // 
-            // Column38
-            // 
-            this.Column38.HeaderText = "A_Vol";
-            this.Column38.Name = "Column38";
-            // 
-            // Column39
-            // 
-            this.Column39.HeaderText = "A_Bitrate";
-            this.Column39.Name = "Column39";
-            // 
-            // Column40
-            // 
-            this.Column40.HeaderText = "A_Reg";
-            this.Column40.Name = "Column40";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "A_MD5";
-            this.Column1.Name = "Column1";
             // 
             // date1
             // 
@@ -437,6 +202,288 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
+            // NameB
+            // 
+            this.NameB.HeaderText = "Breaks";
+            this.NameB.Name = "NameB";
+            this.NameB.Visible = false;
+            // 
+            // A_Ins
+            // 
+            this.A_Ins.HeaderText = "A_Ins";
+            this.A_Ins.Name = "A_Ins";
+            this.A_Ins.Visible = false;
+            // 
+            // Atributo_Locked
+            // 
+            this.Atributo_Locked.HeaderText = "A_Locked";
+            this.Atributo_Locked.Name = "Atributo_Locked";
+            this.Atributo_Locked.Visible = false;
+            // 
+            // Atributo_Changed
+            // 
+            this.Atributo_Changed.HeaderText = "A_Changed";
+            this.Atributo_Changed.Name = "Atributo_Changed";
+            this.Atributo_Changed.Visible = false;
+            // 
+            // Atributo_Filetime
+            // 
+            this.Atributo_Filetime.HeaderText = "A_Filetime";
+            this.Atributo_Filetime.Name = "Atributo_Filetime";
+            this.Atributo_Filetime.Visible = false;
+            // 
+            // Atributo_Filetime2
+            // 
+            this.Atributo_Filetime2.HeaderText = "A_Filetime2";
+            this.Atributo_Filetime2.Name = "Atributo_Filetime2";
+            this.Atributo_Filetime2.Visible = false;
+            // 
+            // A_Time
+            // 
+            this.A_Time.HeaderText = "A_Time";
+            this.A_Time.Name = "A_Time";
+            this.A_Time.Visible = false;
+            // 
+            // A_TypeB
+            // 
+            this.A_TypeB.HeaderText = "A_Type";
+            this.A_TypeB.Name = "A_TypeB";
+            this.A_TypeB.Visible = false;
+            // 
+            // A_IdB
+            // 
+            this.A_IdB.HeaderText = "A_Id";
+            this.A_IdB.Name = "A_IdB";
+            this.A_IdB.Visible = false;
+            // 
+            // A_Id_Edited
+            // 
+            this.A_Id_Edited.HeaderText = "A_Id_Edited";
+            this.A_Id_Edited.Name = "A_Id_Edited";
+            this.A_Id_Edited.Visible = false;
+            // 
+            // A_Fixo
+            // 
+            this.A_Fixo.HeaderText = "A_Fixo";
+            this.A_Fixo.Name = "A_Fixo";
+            this.A_Fixo.Visible = false;
+            // 
+            // A_Descarte
+            // 
+            this.A_Descarte.HeaderText = "A_Descarte";
+            this.A_Descarte.Name = "A_Descarte";
+            this.A_Descarte.Visible = false;
+            // 
+            // A_Net
+            // 
+            this.A_Net.HeaderText = "A_Net";
+            this.A_Net.Name = "A_Net";
+            this.A_Net.Visible = false;
+            // 
+            // A_DurB
+            // 
+            this.A_DurB.HeaderText = "A_Dur";
+            this.A_DurB.Name = "A_DurB";
+            this.A_DurB.Visible = false;
+            // 
+            // A_Slots
+            // 
+            this.A_Slots.HeaderText = "A_Slots";
+            this.A_Slots.Name = "A_Slots";
+            this.A_Slots.Visible = false;
+            // 
+            // A_Orig
+            // 
+            this.A_Orig.HeaderText = "A_Orig";
+            this.A_Orig.Name = "A_Orig";
+            this.A_Orig.Visible = false;
+            // 
+            // Inserções
+            // 
+            this.Inserções.HeaderText = "Inserções";
+            this.Inserções.Name = "Inserções";
+            this.Inserções.Visible = false;
+            // 
+            // A_Id
+            // 
+            this.A_Id.HeaderText = "A_Id";
+            this.A_Id.Name = "A_Id";
+            this.A_Id.Visible = false;
+            // 
+            // A_CTA
+            // 
+            this.A_CTA.HeaderText = "A_CTA";
+            this.A_CTA.Name = "A_CTA";
+            this.A_CTA.Visible = false;
+            // 
+            // A_Source
+            // 
+            this.A_Source.HeaderText = "A_Source";
+            this.A_Source.Name = "A_Source";
+            this.A_Source.Visible = false;
+            // 
+            // A_MovedTo
+            // 
+            this.A_MovedTo.HeaderText = "A_MovedTo";
+            this.A_MovedTo.Name = "A_MovedTo";
+            this.A_MovedTo.Visible = false;
+            // 
+            // A_Type
+            // 
+            this.A_Type.HeaderText = "A_Type";
+            this.A_Type.Name = "A_Type";
+            this.A_Type.Visible = false;
+            // 
+            // A_Title
+            // 
+            this.A_Title.HeaderText = "A_Title";
+            this.A_Title.Name = "A_Title";
+            this.A_Title.Visible = false;
+            // 
+            // A_File
+            // 
+            this.A_File.HeaderText = "A_File";
+            this.A_File.Name = "A_File";
+            this.A_File.Visible = false;
+            // 
+            // A_Folder
+            // 
+            this.A_Folder.HeaderText = "A_Folder";
+            this.A_Folder.Name = "A_Folder";
+            this.A_Folder.Visible = false;
+            // 
+            // A_Text
+            // 
+            this.A_Text.HeaderText = "A_Text";
+            this.A_Text.Name = "A_Text";
+            this.A_Text.Visible = false;
+            // 
+            // A_Composer
+            // 
+            this.A_Composer.HeaderText = "A_Composer";
+            this.A_Composer.Name = "A_Composer";
+            this.A_Composer.Visible = false;
+            // 
+            // A_Comment
+            // 
+            this.A_Comment.HeaderText = "A_Comment";
+            this.A_Comment.Name = "A_Comment";
+            this.A_Comment.Visible = false;
+            // 
+            // A_Checked
+            // 
+            this.A_Checked.HeaderText = "A_Checked";
+            this.A_Checked.Name = "A_Checked";
+            this.A_Checked.Visible = false;
+            // 
+            // A_Err
+            // 
+            this.A_Err.HeaderText = "A_Err";
+            this.A_Err.Name = "A_Err";
+            this.A_Err.Visible = false;
+            // 
+            // A_sErr
+            // 
+            this.A_sErr.HeaderText = "A_sErr";
+            this.A_sErr.Name = "A_sErr";
+            this.A_sErr.Visible = false;
+            // 
+            // A_HoraAudio
+            // 
+            this.A_HoraAudio.HeaderText = "A_HoraAudio";
+            this.A_HoraAudio.Name = "A_HoraAudio";
+            this.A_HoraAudio.Visible = false;
+            // 
+            // A_HoraPK
+            // 
+            this.A_HoraPK.HeaderText = "A_HoraPK";
+            this.A_HoraPK.Name = "A_HoraPK";
+            this.A_HoraPK.Visible = false;
+            // 
+            // A_IsAudioFile
+            // 
+            this.A_IsAudioFile.HeaderText = "A_IsAudioFile";
+            this.A_IsAudioFile.Name = "A_IsAudioFile";
+            this.A_IsAudioFile.Visible = false;
+            // 
+            // A_DurOrig
+            // 
+            this.A_DurOrig.HeaderText = "A_DurOrig";
+            this.A_DurOrig.Name = "A_DurOrig";
+            this.A_DurOrig.Visible = false;
+            // 
+            // A_Dur
+            // 
+            this.A_Dur.HeaderText = "A_Dur";
+            this.A_Dur.Name = "A_Dur";
+            this.A_Dur.Visible = false;
+            // 
+            // A_Refr
+            // 
+            this.A_Refr.HeaderText = "A_Refr";
+            this.A_Refr.Name = "A_Refr";
+            this.A_Refr.Visible = false;
+            // 
+            // A_DurRefr
+            // 
+            this.A_DurRefr.HeaderText = "A_DurRefr";
+            this.A_DurRefr.Name = "A_DurRefr";
+            this.A_DurRefr.Visible = false;
+            // 
+            // A_PtVh
+            // 
+            this.A_PtVh.HeaderText = "A_PtVh";
+            this.A_PtVh.Name = "A_PtVh";
+            this.A_PtVh.Visible = false;
+            // 
+            // A_PtMx
+            // 
+            this.A_PtMx.HeaderText = "A_PtMx";
+            this.A_PtMx.Name = "A_PtMx";
+            this.A_PtMx.Visible = false;
+            // 
+            // A_MxIni
+            // 
+            this.A_MxIni.HeaderText = "A_MxIni";
+            this.A_MxIni.Name = "A_MxIni";
+            this.A_MxIni.Visible = false;
+            // 
+            // A_Intro
+            // 
+            this.A_Intro.HeaderText = "A_Intro";
+            this.A_Intro.Name = "A_Intro";
+            this.A_Intro.Visible = false;
+            // 
+            // A_PtLoc
+            // 
+            this.A_PtLoc.HeaderText = "A_PtLoc";
+            this.A_PtLoc.Name = "A_PtLoc";
+            this.A_PtLoc.Visible = false;
+            // 
+            // A_Vol
+            // 
+            this.A_Vol.HeaderText = "A_Vol";
+            this.A_Vol.Name = "A_Vol";
+            this.A_Vol.Visible = false;
+            // 
+            // A_Bitrate
+            // 
+            this.A_Bitrate.HeaderText = "A_Bitrate";
+            this.A_Bitrate.Name = "A_Bitrate";
+            this.A_Bitrate.Visible = false;
+            // 
+            // A_Reg
+            // 
+            this.A_Reg.HeaderText = "A_Reg";
+            this.A_Reg.Name = "A_Reg";
+            this.A_Reg.Visible = false;
+            // 
+            // A_MD5
+            // 
+            this.A_MD5.HeaderText = "A_MD5";
+            this.A_MD5.Name = "A_MD5";
+            this.A_MD5.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -463,57 +510,57 @@
         #endregion
         private Button button1;
         private DataGridView dataGrid1;
-        private DataGridViewTextBoxColumn Breaks;
-        private DataGridViewTextBoxColumn A_Ins;
-        private DataGridViewTextBoxColumn Atributo_Locked;
-        private DataGridViewTextBoxColumn Atributo_Changed;
-        private DataGridViewTextBoxColumn Atributo_Filetime;
-        private DataGridViewTextBoxColumn Atributo_Filetime2;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column41;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column8;
-        private DataGridViewTextBoxColumn Column9;
-        private DataGridViewTextBoxColumn Column10;
-        private DataGridViewTextBoxColumn Column11;
-        private DataGridViewTextBoxColumn Column12;
-        private DataGridViewTextBoxColumn Column13;
-        private DataGridViewTextBoxColumn Column14;
-        private DataGridViewTextBoxColumn Column15;
-        private DataGridViewTextBoxColumn Column16;
-        private DataGridViewTextBoxColumn Column17;
-        private DataGridViewTextBoxColumn Column18;
-        private DataGridViewTextBoxColumn Column19;
-        private DataGridViewTextBoxColumn Column20;
-        private DataGridViewTextBoxColumn Column21;
-        private DataGridViewTextBoxColumn Column22;
-        private DataGridViewTextBoxColumn Column23;
-        private DataGridViewTextBoxColumn Column24;
-        private DataGridViewTextBoxColumn Column25;
-        private DataGridViewTextBoxColumn Column26;
-        private DataGridViewTextBoxColumn Column27;
-        private DataGridViewTextBoxColumn Column28;
-        private DataGridViewTextBoxColumn Column29;
-        private DataGridViewTextBoxColumn Column30;
-        private DataGridViewTextBoxColumn Column31;
-        private DataGridViewTextBoxColumn Column32;
-        private DataGridViewTextBoxColumn Column33;
-        private DataGridViewTextBoxColumn Column34;
-        private DataGridViewTextBoxColumn Column35;
-        private DataGridViewTextBoxColumn Column36;
-        private DataGridViewTextBoxColumn Column37;
-        private DataGridViewTextBoxColumn Column38;
-        private DataGridViewTextBoxColumn Column39;
-        private DataGridViewTextBoxColumn Column40;
-        private DataGridViewTextBoxColumn Column1;
         private DateTimePicker date1;
         private FolderBrowserDialog folderBrowserDialog1;
         private Button button2;
         private TextBox textBox1;
         private PictureBox pictureBox1;
+        private DataGridViewTextBoxColumn NameB;
+        private DataGridViewTextBoxColumn A_Ins;
+        private DataGridViewTextBoxColumn Atributo_Locked;
+        private DataGridViewTextBoxColumn Atributo_Changed;
+        private DataGridViewTextBoxColumn Atributo_Filetime;
+        private DataGridViewTextBoxColumn Atributo_Filetime2;
+        private DataGridViewTextBoxColumn A_Time;
+        private DataGridViewTextBoxColumn A_TypeB;
+        private DataGridViewTextBoxColumn A_IdB;
+        private DataGridViewTextBoxColumn A_Id_Edited;
+        private DataGridViewTextBoxColumn A_Fixo;
+        private DataGridViewTextBoxColumn A_Descarte;
+        private DataGridViewTextBoxColumn A_Net;
+        private DataGridViewTextBoxColumn A_DurB;
+        private DataGridViewTextBoxColumn A_Slots;
+        private DataGridViewTextBoxColumn A_Orig;
+        private DataGridViewTextBoxColumn Inserções;
+        private DataGridViewTextBoxColumn A_Id;
+        private DataGridViewTextBoxColumn A_CTA;
+        private DataGridViewTextBoxColumn A_Source;
+        private DataGridViewTextBoxColumn A_MovedTo;
+        private DataGridViewTextBoxColumn A_Type;
+        private DataGridViewTextBoxColumn A_Title;
+        private DataGridViewTextBoxColumn A_File;
+        private DataGridViewTextBoxColumn A_Folder;
+        private DataGridViewTextBoxColumn A_Text;
+        private DataGridViewTextBoxColumn A_Composer;
+        private DataGridViewTextBoxColumn A_Comment;
+        private DataGridViewTextBoxColumn A_Checked;
+        private DataGridViewTextBoxColumn A_Err;
+        private DataGridViewTextBoxColumn A_sErr;
+        private DataGridViewTextBoxColumn A_HoraAudio;
+        private DataGridViewTextBoxColumn A_HoraPK;
+        private DataGridViewTextBoxColumn A_IsAudioFile;
+        private DataGridViewTextBoxColumn A_DurOrig;
+        private DataGridViewTextBoxColumn A_Dur;
+        private DataGridViewTextBoxColumn A_Refr;
+        private DataGridViewTextBoxColumn A_DurRefr;
+        private DataGridViewTextBoxColumn A_PtVh;
+        private DataGridViewTextBoxColumn A_PtMx;
+        private DataGridViewTextBoxColumn A_MxIni;
+        private DataGridViewTextBoxColumn A_Intro;
+        private DataGridViewTextBoxColumn A_PtLoc;
+        private DataGridViewTextBoxColumn A_Vol;
+        private DataGridViewTextBoxColumn A_Bitrate;
+        private DataGridViewTextBoxColumn A_Reg;
+        private DataGridViewTextBoxColumn A_MD5;
     }
 }
