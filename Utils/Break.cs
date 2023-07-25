@@ -26,7 +26,7 @@ namespace LeituraXml.Utils
                 typeof(Break).GetProperty(attributeName).SetValue(this, attributeValue);
             }
             this.Insercao = getListObjIns(listIns);
-            this.NameB = Break.Name;
+            this.Name = Break.Name;
         }
         //Recebe lista xml de Ins
         public List<Ins> getListObjIns(List<XmlNode> listIns)
@@ -63,7 +63,7 @@ namespace LeituraXml.Utils
             return list;
         }
         
-        public string NameB { get; set; }
+        public string Name { get; set; }
         public string Ins { get; set; }
         public List<Ins> Insercao { get; set; } = new List<Ins>();
         public string Locked { get; set; }

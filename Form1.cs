@@ -5,6 +5,7 @@ using System.IO.Compression;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace LeituraXml
 {
@@ -16,20 +17,18 @@ namespace LeituraXml
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            button1.Enabled = false;
+            textBox1.Text = @"C:\Playlist\pgm";
             MessageBox.Show("leitor montagem xml");
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
-            dataGrid1.Rows.Clear();
-            dataGrid1.Columns.Clear();
-            AddDataTable AddGrid = new AddDataTable();
-            Playlist objPrincipal = new Playlist(textBox1.Text, @date1.Value.Day.ToString("00"), date1.Value.Month.ToString("00"), date1.Value.Year.ToString());
-            if (objPrincipal.Init()!=null)
+            //dataGrid1.Rows.Clear();
+            //dataGrid1.Columns.Clear();
+            ScheduleDay Playlists = new ScheduleDay(textBox1.Text, @date1.Value.Day.ToString("00"), date1.Value.Month.ToString("00"), date1.Value.Year.ToString());
+            
+            if (Playlists.Init()!=null)
             {
-                AddGrid.getValueDataTableBreak(objPrincipal.Init());
-                dataGrid1.DataSource = AddGrid;
+                dataGrid1.DataSource = Playlists.Init();
             }
             else
             {

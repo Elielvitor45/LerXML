@@ -4,6 +4,7 @@ using System.Data;
 using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.IO;
+using System.Text.Json;
 using System.IO.Compression;
 using System.Linq;
 using System.Numerics;
@@ -16,20 +17,29 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace LeituraXml.Utils
-{
-    public class Playlist
+{  
+    public class ScheduleDay
     {
         public string caminho { get; set; }
         public string day { get; set; }
         public string mounth { get; set; }
         public string year { get; set; }
-        public Playlist(string caminho, string day, string mounth, string year)
+        public ScheduleDay(string caminho, string day, string mounth, string year)
         {
             this.caminho = caminho;
             this.day = day;
             this.mounth = mounth;
             this.year = year;
         }
+        public void parseJson(List<Break> breaks,string name) {
+            string filePath = @$"C:\Desenvolvimento\LeituraXml\LeituraXml\{name}.json";
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string jsonString = JsonSerializer.Serialize(breaks, options);
+            File.WriteAllText(filePath, jsonString);
+        }
+
+
+
         //utilizar esse metodo precisa de split
         public string getpath(string caminho,string dayS,string monthS,string yearS)
         {
@@ -116,20 +126,18 @@ namespace LeituraXml.Utils
                 XmlNodeList listXML = getXmlNodeList();
                 //instancia das Listas
                 List<XmlNode> listBreak = new List<XmlNode>();
-                List<XmlNode> listIns = new List<XmlNode>();
                 List<Break> listObjBreak = new List<Break>();
-                List<Ins> listObjIns = new List<Ins>();
                 //Instancia dos Objetos
                 Break objBreak = new Break();
                 //ListasXMl
                 listBreak = objBreak.getXmlBreakNodeList(listXML);
                 //ListasObjetos
                 listObjBreak = getListObjBreaks(listBreak);
+                parseJson(listObjBreak, caminhoCompleto[1]);
                 return listObjBreak;
             }
             else
             {
-
                 return null;
             }
         }   

@@ -23,10 +23,10 @@ namespace LeituraXml.Utils
                     typeof(Ins).GetProperty(attributeName).SetValue(this, attributeValue);
                 }
 
-            this.NameI = listIns.Name;
+            this.Name = listIns.Name;
         }
 
-        public string NameI { get; set; }
+        public string Name { get; set; }
         public string Id { get; set; }
         public string CTA { get; set; }
         public string Source { get; set; }
