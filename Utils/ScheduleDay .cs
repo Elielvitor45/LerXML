@@ -24,6 +24,16 @@ namespace LeituraXml.Utils
         public string day { get; set; }
         public string mounth { get; set; }
         public string year { get; set; }
+        
+        public ScheduleDay(string caminho,string caminho2,string day, string mounth, string year) {
+            this.caminho = caminho;
+            this.day = day;
+            this.mounth = mounth;
+            this.year = year;
+            string fullPath = @$"{day}-{mounth}-{year}.json";
+            List<Break> breaks = Init();
+            parseJson(breaks, fullPath,caminho2);
+        }
         public ScheduleDay(string caminho, string day, string mounth, string year)
         {
             this.caminho = caminho;
@@ -31,38 +41,44 @@ namespace LeituraXml.Utils
             this.mounth = mounth;
             this.year = year;
         }
-        public void parseJson(List<Break> breaks,string name) {
-            string filePath = @$"C:\Desenvolvimento\LeituraXml\LeituraXml\{name}.json";
+        public void parseJson(List<Break> breaks,string filename,string path) {
+
+            if (String.IsNullOrEmpty(path))
+            {
+                MessageBox.Show("O caminho22 não pode ser vazio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            string filePath = @$"{path}\{filename}";
             var options = new JsonSerializerOptions { WriteIndented = true };
             string jsonString = JsonSerializer.Serialize(breaks, options);
             File.WriteAllText(filePath, jsonString);
+            MessageBox.Show(" Json Salvo com Sucesso","Salvo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+
         }
 
-
-
         //utilizar esse metodo precisa de split
-        public string getpath(string caminho,string dayS,string monthS,string yearS)
+        public string getpath(string path,string dayS,string monthS,string yearS)
         {
             if (String.IsNullOrEmpty(caminho))
             {
                 MessageBox.Show("Caminho não pode ser Vazio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
-            string caminhoCompleto = @caminho;
-            caminhoCompleto += @"\Montagem";
+            string fullPath = @path;
+            fullPath += @"\Montagem";
 
             int day, month, year;
             if ((int.TryParse(dayS, out day) && int.TryParse(monthS, out month) && int.TryParse(yearS, out year)))
             {
-                string nomearquivo = @"\" + $"{dayS}-{monthS}-{yearS}" + ".zip";
-                caminhoCompleto += nomearquivo+"%"+@$"{dayS}-{monthS}-{yearS}.xml";
+                string filename = @"\" + $"{dayS}-{monthS}-{yearS}" + ".zip";
+                fullPath += filename+"%"+@$"{dayS}-{monthS}-{yearS}.xml";
             }
             else
             {
                 MessageBox.Show("A Data não pode ser vazia", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
-            return caminhoCompleto;
+            return fullPath;
         }
         //Objeto que guarda o xml todo
         XmlDocument xmlDocument = new XmlDocument();
@@ -120,8 +136,8 @@ namespace LeituraXml.Utils
         {
             if (getpath(caminho, day, mounth, year) != null) {
                 //Carrega o arquivo xml
-                string[] caminhoCompleto = getpath(caminho, day, mounth, year).Split("%");
-                readXmlDocument(caminhoCompleto[0], caminhoCompleto[1]);
+                string[] fullPath = getpath(caminho, day, mounth, year).Split("%");
+                readXmlDocument(fullPath[0], fullPath[1]);
                 //lista com todos os nós do xml
                 XmlNodeList listXML = getXmlNodeList();
                 //instancia das Listas
@@ -133,7 +149,6 @@ namespace LeituraXml.Utils
                 listBreak = objBreak.getXmlBreakNodeList(listXML);
                 //ListasObjetos
                 listObjBreak = getListObjBreaks(listBreak);
-                parseJson(listObjBreak, caminhoCompleto[1]);
                 return listObjBreak;
             }
             else
@@ -142,6 +157,4 @@ namespace LeituraXml.Utils
             }
         }   
     }
-}
-
-                    
+}       

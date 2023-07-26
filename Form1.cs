@@ -22,8 +22,6 @@ namespace LeituraXml
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
-            //dataGrid1.Rows.Clear();
-            //dataGrid1.Columns.Clear();
             ScheduleDay Playlists = new ScheduleDay(textBox1.Text, @date1.Value.Day.ToString("00"), date1.Value.Month.ToString("00"), date1.Value.Year.ToString());
             
             if (Playlists.Init()!=null)
@@ -45,6 +43,7 @@ namespace LeituraXml
         {
             folderBrowserDialog1.ShowDialog();
             string path = folderBrowserDialog1.SelectedPath;
+            folderBrowserDialog1.Reset();
             if (!Directory.Exists(path + @"\montagem"))
             {
                 MessageBox.Show("Pasta 'Montagem' não encontrada", "Erro",MessageBoxButtons.OK,MessageBoxIcon.Warning);
@@ -53,6 +52,25 @@ namespace LeituraXml
                 button1.Enabled = true;
                 textBox1.Text = path;
             }   
+        }
+
+        private void buttonPathJson_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.ShowDialog();
+            string path = folderBrowserDialog1.SelectedPath;
+            folderBrowserDialog1.Reset();
+            button1.Enabled = true;
+            textBoxJson.Text = path;
+            
+        }
+
+        private void buttonJson_Click(object sender, EventArgs e)
+        {
+            
+            ScheduleDay Playlists = new ScheduleDay(textBox1.Text,textBoxJson.Text, @date1.Value.Day.ToString("00"), date1.Value.Month.ToString("00"), date1.Value.Year.ToString());
+
+
+
         }
     }
 }
