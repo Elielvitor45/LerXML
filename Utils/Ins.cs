@@ -24,7 +24,6 @@ namespace LeituraXml.Utils
                 }
             this.Name = listIns.Name;
         }
-
         public string Name { get; set; }
         public string Id { get; set; }
         public string CTA { get; set; }

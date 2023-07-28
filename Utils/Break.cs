@@ -28,7 +28,6 @@ namespace LeituraXml.Utils
             ReadInsertions(Break);
             this.Name = Break.Name;
         }
-        
         //Recebe lista xml de Ins
         private void ReadInsertions(XmlNode breaks)
         {
@@ -39,7 +38,6 @@ namespace LeituraXml.Utils
                 Ins objins = new Ins(item);
                Insertions.Add(objins);
            }
-
         }
         //Recebe lista xml de Break
         private List<XmlNode> GetListXmlIns(XmlNode list)
@@ -63,8 +61,7 @@ namespace LeituraXml.Utils
                     list.Add(noFilho);
                 }
             return list;
-        }
-        
+        }     
         public string Name { get; set; }
         public string Ins { get; set; }
         public List<Ins> Insertions { get; set; } 

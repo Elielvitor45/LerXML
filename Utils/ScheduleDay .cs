@@ -17,7 +17,6 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Runtime.InteropServices.JavaScript.JSType;
-
 namespace LeituraXml.Utils
 {  
     public class ScheduleDay
@@ -131,7 +130,6 @@ namespace LeituraXml.Utils
                 Break Break0 = new Break(item);   
                 Breaks.Add(Break0);
             }
-
         }
         private void Init()
         {
