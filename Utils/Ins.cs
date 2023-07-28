@@ -22,7 +22,6 @@ namespace LeituraXml.Utils
                     }
                     typeof(Ins).GetProperty(attributeName).SetValue(this, attributeValue);
                 }
-
             this.Name = listIns.Name;
         }
 

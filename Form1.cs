@@ -22,11 +22,11 @@ namespace LeituraXml
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
-            ScheduleDay Playlists = new ScheduleDay(textBox1.Text, @date1.Value.Day.ToString("00"), date1.Value.Month.ToString("00"), date1.Value.Year.ToString());
-            
-            if (Playlists.Init()!=null)
+            ScheduleDay Playlists = new ScheduleDay(textBox1.Text,date1.Value);
+
+            if (Playlists.Breaks != null)
             {
-                dataGrid1.DataSource = Playlists.Init();
+                dataGrid1.DataSource = Playlists.Breaks;
             }
             else
             {
@@ -66,9 +66,8 @@ namespace LeituraXml
 
         private void buttonJson_Click(object sender, EventArgs e)
         {
-            
-            ScheduleDay Playlists = new ScheduleDay(textBox1.Text,textBoxJson.Text, @date1.Value.Day.ToString("00"), date1.Value.Month.ToString("00"), date1.Value.Year.ToString());
 
+            ScheduleDay Playlists = new ScheduleDay(textBox1.Text, textBoxJson.Text,date1.Value);
 
 
         }

@@ -16,6 +16,8 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
 namespace LeituraXml.Utils
 {  
     public class ScheduleDay
@@ -24,42 +26,42 @@ namespace LeituraXml.Utils
         public string day { get; set; }
         public string mounth { get; set; }
         public string year { get; set; }
-        
-        public ScheduleDay(string caminho,string caminho2,string day, string mounth, string year) {
+        public List<Break> Breaks { get; set; }
+        public ScheduleDay(string caminho,string caminho2,DateTime date) {
             this.caminho = caminho;
-            this.day = day;
-            this.mounth = mounth;
-            this.year = year;
+            this.day = date.Day.ToString("00");
+            this.mounth = date.Month.ToString("00");
+            this.year = date.Year.ToString();
             string fullPath = @$"{day}-{mounth}-{year}.json";
-            List<Break> breaks = Init();
-            parseJson(breaks, fullPath,caminho2);
+            Init();
+            parseJson(Breaks, fullPath,caminho2);
         }
-        public ScheduleDay(string caminho, string day, string mounth, string year)
-        {
+        public ScheduleDay(string caminho, DateTime date) { 
             this.caminho = caminho;
-            this.day = day;
-            this.mounth = mounth;
-            this.year = year;
+            this.day = date.Day.ToString("00");
+            this.mounth = date.Month.ToString("00");
+            this.year = date.Year.ToString();        
+            Init();
         }
-        public void parseJson(List<Break> breaks,string filename,string path) {
-
-            if (String.IsNullOrEmpty(path))
+        private void parseJson(List<Break> breaks,string filename,string path) {
+            if (string.IsNullOrEmpty(path))
             {
-                MessageBox.Show("O caminho22 não pode ser vazio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("O caminho não pode ser vazio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            string filePath = @$"{path}\{filename}";
-            var options = new JsonSerializerOptions { WriteIndented = true };
-            string jsonString = JsonSerializer.Serialize(breaks, options);
-            File.WriteAllText(filePath, jsonString);
-            MessageBox.Show(" Json Salvo com Sucesso","Salvo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-
-
+            else
+            {
+                string filePath = @$"{path}\{filename}";
+                var options = new JsonSerializerOptions { WriteIndented = true };
+                string jsonString = JsonSerializer.Serialize(breaks, options);
+                File.WriteAllText(filePath, jsonString);
+                MessageBox.Show(" Json Salvo com Sucesso", "Salvo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
-
         //utilizar esse metodo precisa de split
-        public string getpath(string path,string dayS,string monthS,string yearS)
+        private string getpath(string path,string dayS,string monthS,string yearS)
         {
-            if (String.IsNullOrEmpty(caminho))
+            if (string.IsNullOrEmpty(caminho))
             {
                 MessageBox.Show("Caminho não pode ser Vazio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
@@ -82,7 +84,7 @@ namespace LeituraXml.Utils
         }
         //Objeto que guarda o xml todo
         XmlDocument xmlDocument = new XmlDocument();
-        public void readXmlDocument(String FileZIP,string NameArchive) {
+        private void readXmlDocument(string FileZIP,string NameArchive) {
             try
             {
                 if (!File.Exists(FileZIP))
@@ -116,23 +118,22 @@ namespace LeituraXml.Utils
                 throw;
             }
         }
-        public XmlNodeList getXmlNodeList()
+        private XmlNodeList getXmlNodeList()
         {
             XmlNodeList NodeList = xmlDocument.SelectNodes("//Playlist/*");
             return NodeList;
         }
-        public List<Break> getListObjBreaks(List<XmlNode> list)
+        public void ReadBreaks(List<XmlNode> list)
         {
-            List<Break> listObjBreak = new List<Break>();
-            Break objBreak01 = new Break();
+            Breaks = new List<Break>();
             foreach (var item in list)
             {
-                Break objBreak02 = new Break(item,objBreak01.GetListXmlIns(item));   
-                listObjBreak.Add(objBreak02);
+                Break Break0 = new Break(item);   
+                Breaks.Add(Break0);
             }
-            return listObjBreak;
+
         }
-        public List<Break> Init()
+        private void Init()
         {
             if (getpath(caminho, day, mounth, year) != null) {
                 //Carrega o arquivo xml
@@ -142,18 +143,16 @@ namespace LeituraXml.Utils
                 XmlNodeList listXML = getXmlNodeList();
                 //instancia das Listas
                 List<XmlNode> listBreak = new List<XmlNode>();
-                List<Break> listObjBreak = new List<Break>();
                 //Instancia dos Objetos
-                Break objBreak = new Break();
+                Break breakXml = new Break();
                 //ListasXMl
-                listBreak = objBreak.getXmlBreakNodeList(listXML);
+                listBreak = breakXml.getXmlBreakNodeList(listXML);
                 //ListasObjetos
-                listObjBreak = getListObjBreaks(listBreak);
-                return listObjBreak;
+                ReadBreaks(listBreak);
             }
             else
             {
-                return null;
+                return;
             }
         }   
     }

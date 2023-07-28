@@ -13,7 +13,7 @@ namespace LeituraXml.Utils
 
         public Break() { }
 
-        public Break(XmlNode Break, List<XmlNode> listIns)
+        public Break(XmlNode Break)
         {   
             string[] attributeNames = {"Ins", "Changed", "Locked", "Filetime", "Filetime2", "Time", "Type", "Id", "Id_Edited", "Fixo", "Descarte", "Net", "Dur", "Slots", "Orig" };
             foreach (string attributeName in attributeNames)
@@ -25,22 +25,24 @@ namespace LeituraXml.Utils
                 }
                 typeof(Break).GetProperty(attributeName).SetValue(this, attributeValue);
             }
-            this.Insercao = getListObjIns(listIns);
+            ReadInsertions(Break);
             this.Name = Break.Name;
         }
+        
         //Recebe lista xml de Ins
-        public List<Ins> getListObjIns(List<XmlNode> listIns)
+        private void ReadInsertions(XmlNode breaks)
         {
-            List<Ins> objLista = new List<Ins>();
+            List<XmlNode> listIns = GetListXmlIns(breaks);
+            Insertions = new List<Ins>();
             foreach (var item in listIns)
             {
                 Ins objins = new Ins(item);
-               objLista.Add(objins);
+               Insertions.Add(objins);
            }
-           return objLista;
+
         }
         //Recebe lista xml de Break
-        public List<XmlNode> GetListXmlIns(XmlNode list)
+        private List<XmlNode> GetListXmlIns(XmlNode list)
         {
             List<XmlNode> listains = new List<XmlNode>();
                     foreach (XmlNode childNode in list.ChildNodes)
@@ -65,7 +67,7 @@ namespace LeituraXml.Utils
         
         public string Name { get; set; }
         public string Ins { get; set; }
-        public List<Ins> Insercao { get; set; } = new List<Ins>();
+        public List<Ins> Insertions { get; set; } 
         public string Locked { get; set; }
         public string Changed { get; set; }
         public string Filetime { get; set; }

@@ -39,6 +39,7 @@
             this.buttonPathJson = new System.Windows.Forms.Button();
             this.textBoxJson = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -193,5 +194,6 @@
         private Button buttonPathJson;
         private TextBox textBoxJson;
         private PictureBox pictureBox2;
+
     }
 }
