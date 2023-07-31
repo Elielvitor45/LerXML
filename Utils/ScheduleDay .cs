@@ -21,24 +21,24 @@ namespace LeituraXml.Utils
 {  
     public class ScheduleDay
     {
-        public string caminho { get; set; }
+        public string path_one { get; set; }
         public string day { get; set; }
         public string mounth { get; set; }
         public string year { get; set; }
         public List<Break> Breaks { get; set; }
-        public ScheduleDay(string caminho,string caminho2,DateTime date) {
-            this.caminho = caminho;
+        public ScheduleDay(string path,string pathTwo,DateTime date) {
+            this. path_one = path;
             this.day = date.Day.ToString("00");
             this.mounth = date.Month.ToString("00");
             this.year = date.Year.ToString();
-            string fullPath = @$"{day}-{mounth}-{year}.json";
+            string nameJson = @$"{day}-{mounth}-{year}.json";
             if (Init())
             {
-                parseJson(Breaks, fullPath, caminho2);
+                parseJson(Breaks, nameJson, pathTwo);
             }
         }
-        public ScheduleDay(string caminho, DateTime date) { 
-            this.caminho = caminho;
+        public ScheduleDay(string path, DateTime date) { 
+            this.path_one = path;
             this.day = date.Day.ToString("00");
             this.mounth = date.Month.ToString("00");
             this.year = date.Year.ToString();        
@@ -61,7 +61,7 @@ namespace LeituraXml.Utils
         //utilizar esse metodo precisa de split
         private string getpath(string path,string dayS,string monthS,string yearS)
         {
-            if (string.IsNullOrEmpty(caminho))
+            if (string.IsNullOrEmpty(path))
             {
                 MessageBox.Show("Caminho não pode ser Vazio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
@@ -136,9 +136,9 @@ namespace LeituraXml.Utils
         }
         private bool Init()
         {
-            if (getpath(caminho, day, mounth, year) != null) {
+            if (getpath(path_one, day, mounth, year) != null) {
                 //Carrega o arquivo xml
-                string[] fullPath = getpath(caminho, day, mounth, year).Split("%");
+                string[] fullPath = getpath(path_one, day, mounth, year).Split("%");
                 
                 if (readXmlDocument(fullPath[0], fullPath[1]))
                 {
