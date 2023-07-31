@@ -32,8 +32,10 @@ namespace LeituraXml.Utils
             this.mounth = date.Month.ToString("00");
             this.year = date.Year.ToString();
             string fullPath = @$"{day}-{mounth}-{year}.json";
-            Init();
-            parseJson(Breaks, fullPath,caminho2);
+            if (Init())
+            {
+                parseJson(Breaks, fullPath, caminho2);
+            }
         }
         public ScheduleDay(string caminho, DateTime date) { 
             this.caminho = caminho;
@@ -46,7 +48,6 @@ namespace LeituraXml.Utils
             if (string.IsNullOrEmpty(path))
             {
                 MessageBox.Show("O caminho não pode ser vazio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
             }
             else
             {
@@ -83,13 +84,13 @@ namespace LeituraXml.Utils
         }
         //Objeto que guarda o xml todo
         XmlDocument xmlDocument = new XmlDocument();
-        private void readXmlDocument(string FileZIP,string NameArchive) {
+        private bool readXmlDocument(string FileZIP,string NameArchive) {
             try
             {
                 if (!File.Exists(FileZIP))
                 {
                     MessageBox.Show("Arquivo não encontrado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    return false;
                 }
                 using (FileStream zipToOpen = new FileStream(FileZIP, FileMode.Open))
                 {
@@ -102,10 +103,12 @@ namespace LeituraXml.Utils
                             {
                                 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
                                 xmlDocument.Load(xmlStream);
+                                return true;
                             }
                         }
                         else
                         {
+                            return false;
                         }
                     }
                 }
@@ -113,7 +116,7 @@ namespace LeituraXml.Utils
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
                 throw;
             }
         }
@@ -131,26 +134,33 @@ namespace LeituraXml.Utils
                 Breaks.Add(Break0);
             }
         }
-        private void Init()
+        private bool Init()
         {
             if (getpath(caminho, day, mounth, year) != null) {
                 //Carrega o arquivo xml
                 string[] fullPath = getpath(caminho, day, mounth, year).Split("%");
-                readXmlDocument(fullPath[0], fullPath[1]);
-                //lista com todos os nós do xml
-                XmlNodeList listXML = getXmlNodeList();
-                //instancia das Listas
-                List<XmlNode> listBreak = new List<XmlNode>();
-                //Instancia dos Objetos
-                Break breakXml = new Break();
-                //ListasXMl
-                listBreak = breakXml.getXmlBreakNodeList(listXML);
-                //ListasObjetos
-                ReadBreaks(listBreak);
+                
+                if (readXmlDocument(fullPath[0], fullPath[1]))
+                {
+                    //lista com todos os nós do xml
+                    XmlNodeList listXML = getXmlNodeList();
+                    //instancia das Listas
+                    List<XmlNode> listBreak = new List<XmlNode>();
+                    //Instancia dos Objetos
+                    Break breakXml = new Break();
+                    //ListasXMl
+                    listBreak = breakXml.getXmlBreakNodeList(listXML);
+                    ReadBreaks(listBreak);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
-                return;
+                return false;
             }
         }   
     }

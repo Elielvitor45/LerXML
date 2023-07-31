@@ -11,7 +11,6 @@ namespace LeituraXml.Utils
     public class Ins
     {
         public Ins(XmlNode listIns) {
-                
             string[] attributeNames = {"Id", "CTA", "Source", "MovedTo", "Type", "Title", "File", "Folder", "Text", "Composer", "Comment", "Checked", "Err", "sErr", "HoraAudio", "HoraPK", "IsAudioFile", "DurOrig", "Dur", "Refr", "DurRefr", "PtVh", "PtMx", "MxIni", "Intro", "PtLoc", "Vol", "Bitrate", "Reg", "MD5" };
                 foreach (string attributeName in attributeNames)
                 {

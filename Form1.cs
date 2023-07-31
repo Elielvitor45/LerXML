@@ -13,7 +13,6 @@ namespace LeituraXml
     public partial class Form1 : Form
     {
         private DataTable dataTable;
-
         public Form1()
         {
             InitializeComponent();
@@ -78,19 +77,25 @@ namespace LeituraXml
         {
             dataGrid1.DataSource = dataTable;
             ScheduleDay Playlists = new ScheduleDay(textBox1.Text, date1.Value);
+            dataTable.Rows.Clear();
             PreencherDataGridView(Playlists.Breaks);
         }
-
         private void PreencherDataGridView(List<Break> suaLista)
         {
-            foreach (var breaks in suaLista)
+            if (suaLista!=null)
             {
-                FillBreaks(breaks);
-
-                foreach (var insObj in breaks.Insertions)
+                foreach (var breaks in suaLista)
                 {
-                    FillIns(insObj,breaks);
+                    FillBreaks(breaks);
+
+                    foreach (var insObj in breaks.Insertions)
+                    {
+                        FillIns(insObj, breaks);
+                    }
                 }
+            }
+            else
+            {
             }
         }
         private void FillBreaks(Break breaks)
@@ -219,7 +224,6 @@ namespace LeituraXml
                 textBox1.Text = path;
             }
         }
-
         private void buttonPathJson_Click(object sender, EventArgs e)
         {
             folderBrowserDialog1.ShowDialog();

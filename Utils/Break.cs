@@ -10,9 +10,7 @@ namespace LeituraXml.Utils
 {
     public class Break
     {
-
         public Break() { }
-
         public Break(XmlNode Break)
         {   
             string[] attributeNames = {"Ins", "Changed", "Locked", "Filetime", "Filetime2", "Time", "Type", "Id", "Id_Edited", "Fixo", "Descarte", "Net", "Dur", "Slots", "Orig" };
