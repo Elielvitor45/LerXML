@@ -13,6 +13,7 @@ namespace LeituraXml
     public partial class Form1 : Form
     {
         private DataTable dataTable;
+
         public Form1()
         {
             InitializeComponent();
@@ -73,13 +74,14 @@ namespace LeituraXml
             dataTable.Columns.Add("Slots", typeof(string));
             dataTable.Columns.Add("Orig", typeof(string));
         }
-        private void button1_Click_1(object sender, EventArgs e)
+        private void buttonReadXml_Click_1(object sender, EventArgs e)
         {
             dataGrid1.DataSource = dataTable;
-            ScheduleDay Playlists = new ScheduleDay(textBox1.Text, date1.Value);
+            Playlist.ReadScheduleDay(textBox1.Text, date1.Value);
             dataTable.Rows.Clear();
-            PreencherDataGridView(Playlists.Breaks);
+            PreencherDataGridView(Playlist.Breaks);
         }
+        private ScheduleDay Playlist = new ScheduleDay();
         private void PreencherDataGridView(List<Break> suaLista)
         {
             if (suaLista!=null)
@@ -202,13 +204,7 @@ namespace LeituraXml
                 breaks.Orig
             );
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
-        {
-        }
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonPathMontagem_Click(object sender, EventArgs e)
         {
             folderBrowserDialog1.ShowDialog();
             string path = folderBrowserDialog1.SelectedPath;
@@ -220,7 +216,7 @@ namespace LeituraXml
             }
             else
             {
-                button1.Enabled = true;
+                buttonReadXml.Enabled = true;
                 textBox1.Text = path;
             }
         }
@@ -229,12 +225,15 @@ namespace LeituraXml
             folderBrowserDialog1.ShowDialog();
             string path = folderBrowserDialog1.SelectedPath;
             folderBrowserDialog1.Reset();
-            button1.Enabled = true;
+            buttonReadXml.Enabled = true;
             textBoxJson.Text = path;
         }
         private void buttonJson_Click(object sender, EventArgs e)
         {
-            ScheduleDay Playlists = new ScheduleDay(textBox1.Text, textBoxJson.Text, date1.Value);
+            Playlist.ReadScheduleDay(textBox1.Text, date1.Value);
+            Playlist.parseJson(textBoxJson.Text);
+
         }
+
     }
 }
