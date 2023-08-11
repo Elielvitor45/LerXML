@@ -38,16 +38,6 @@ namespace LeituraXml.Utils
                 }
             }
         }
-        //Recebe uma lista xml De todos os nós, é utilizada no metodo Init() do ScheduleDay
-        public List<XmlNode> getXmlBreakNodeList(XmlNodeList xmlnodelist)
-        {
-            List<XmlNode> list = new List<XmlNode>();
-            foreach (XmlNode noFilho in xmlnodelist)
-            {
-                list.Add(noFilho);
-            }
-            return list;
-        }
         public string Name { get; set; }
         public string Ins { get; set; }
         public List<Ins> Insertions { get; set; }

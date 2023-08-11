@@ -9,7 +9,7 @@ namespace LeituraXml.Utils
         public string path_Montagem { get; set; }
 
         public DateTime date { get; set; }
-        public List<Break> Breaks { get; set; }
+        public List<Break> Breaks { get; set; } = new List<Break>();
         public void ReadScheduleDay(string path, DateTime date)
         {
             this.path_Montagem = path;
@@ -107,10 +107,10 @@ namespace LeituraXml.Utils
             XmlNodeList NodeList = xmlDocument.SelectNodes("//Playlist/*");
             return NodeList;
         }
-        public void ReadBreaks(List<XmlNode> list)
+        public void ReadBreaks()
         {
-            Breaks = new List<Break>();
-            foreach (var item in list)
+            XmlNodeList listXML = getXmlNodeList();
+            foreach (XmlNode item in listXML)
             {
                 Break Break0 = new Break(item);
                 Breaks.Add(Break0);
@@ -120,11 +120,7 @@ namespace LeituraXml.Utils
         {
             if (readXmlDocument())
             {
-                XmlNodeList listXML = getXmlNodeList();
-                List<XmlNode> listBreak = new List<XmlNode>();
-                Break breakXml = new Break();
-                listBreak = breakXml.getXmlBreakNodeList(listXML);
-                ReadBreaks(listBreak);
+                ReadBreaks();
                 return true;
             }
             else
