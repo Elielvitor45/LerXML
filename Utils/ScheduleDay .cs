@@ -32,7 +32,6 @@ namespace LeituraXml.Utils
                 MessageBox.Show(" Json Salvo com Sucesso", "Salvo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        //utilizar esse metodo precisa de split
         private string getpath(string path)
         {
             string datePath = date.ToString("dd-MM-yyyy");
@@ -56,7 +55,6 @@ namespace LeituraXml.Utils
             }
             return fullPath;
         }
-        //Objeto que guarda o xml todo
         XmlDocument xmlDocument = new XmlDocument();
         private bool readXmlDocument()
         {
@@ -122,13 +120,9 @@ namespace LeituraXml.Utils
         {
             if (readXmlDocument())
             {
-                //lista com todos os nós do xml
                 XmlNodeList listXML = getXmlNodeList();
-                //instancia das Listas
                 List<XmlNode> listBreak = new List<XmlNode>();
-                //Instancia dos Objetos
                 Break breakXml = new Break();
-                //ListasXMl
                 listBreak = breakXml.getXmlBreakNodeList(listXML);
                 ReadBreaks(listBreak);
                 return true;

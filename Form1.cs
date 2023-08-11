@@ -7,13 +7,11 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-
 namespace LeituraXml
 {
     public partial class Form1 : Form
     {
         private DataTable dataTable;
-
         public Form1()
         {
             InitializeComponent();
@@ -232,8 +230,6 @@ namespace LeituraXml
         {
             Playlist.ReadScheduleDay(textBox1.Text, date1.Value);
             Playlist.parseJson(textBoxJson.Text);
-
         }
-
     }
 }

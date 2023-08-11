@@ -26,7 +26,6 @@ namespace LeituraXml.Utils
             ReadInsertions(Break);
             this.Name = Break.Name;
         }
-        //Recebe lista xml de Break
         private void ReadInsertions(XmlNode list)
         {
             Insertions = new List<Ins>();

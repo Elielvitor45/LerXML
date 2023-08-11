@@ -55,6 +55,4 @@ namespace LeituraXml.Utils
         public string Reg { get; set; }
         public string MD5 { get; set; }
     }
-
-    
 }
