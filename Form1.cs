@@ -228,8 +228,7 @@ namespace LeituraXml
         }
         private void buttonJson_Click(object sender, EventArgs e)
         {
-            Playlist.ReadScheduleDay(textBox1.Text, date1.Value);
-            Playlist.parseJson(textBoxJson.Text);
+            Playlist.ReadScheduleDay(textBox1.Text, textBoxJson.Text, date1.Value);
         }
     }
 }

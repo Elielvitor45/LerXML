@@ -7,7 +7,6 @@ namespace LeituraXml.Utils
     public class ScheduleDay
     {
         public string path_Montagem { get; set; }
-
         public DateTime date { get; set; }
         public List<Break> Breaks { get; set; } = new List<Break>();
         public void ReadScheduleDay(string path, DateTime date)
@@ -16,7 +15,17 @@ namespace LeituraXml.Utils
             this.date = date;
             Init();
         }
-        public void parseJson(string path)
+        public void ReadScheduleDay(string pathMontagem, string pathJson, DateTime date)
+        {
+            this.path_Montagem = pathMontagem;
+            this.date = date;
+            if (Init())
+            {
+                parseJson(pathJson);
+            }
+        }
+
+        private void parseJson(string path)
         {
             string nameJson = $@"{date.ToString("dd-MM-yyyy")}.json";
             if (string.IsNullOrEmpty(path))
