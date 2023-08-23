@@ -10,17 +10,18 @@ namespace LeituraXml.Utils
 {
     public class Ins
     {
-        public Ins(XmlNode listIns) {
-            string[] attributeNames = {"Id", "CTA", "Source", "MovedTo", "Type", "Title", "File", "Folder", "Text", "Composer", "Comment", "Checked", "Err", "sErr", "HoraAudio", "HoraPK", "IsAudioFile", "DurOrig", "Dur", "Refr", "DurRefr", "PtVh", "PtMx", "MxIni", "Intro", "PtLoc", "Vol", "Bitrate", "Reg", "MD5" };
-                foreach (string attributeName in attributeNames)
+        public Ins(XmlNode listIns)
+        {
+            string[] attributeNames = { "Id", "CTA", "Source", "MovedTo", "Type", "Title", "File", "Folder", "Text", "Composer", "Comment", "Checked", "Err", "sErr", "HoraAudio", "HoraPK", "IsAudioFile", "DurOrig", "Dur", "Refr", "DurRefr", "PtVh", "PtMx", "MxIni", "Intro", "PtLoc", "Vol", "Bitrate", "Reg", "MD5" };
+            foreach (string attributeName in attributeNames)
+            {
+                string attributeValue = listIns.Attributes[attributeName]?.Value;
+                if (string.IsNullOrEmpty(attributeValue))
                 {
-                    string attributeValue = listIns.Attributes[attributeName]?.Value;
-                    if (string.IsNullOrEmpty(attributeValue))
-                    {
-                        attributeValue = "";
-                    }
-                    typeof(Ins).GetProperty(attributeName).SetValue(this, attributeValue);
+                    attributeValue = "";
                 }
+                typeof(Ins).GetProperty(attributeName).SetValue(this, attributeValue);
+            }
             this.Name = listIns.Name;
         }
         public string Name { get; set; }
