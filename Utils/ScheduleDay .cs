@@ -25,12 +25,11 @@ namespace LeituraXml.Utils
             }
         }
 
-        private bool parseJson(string path)
+        private void parseJson(string path)
         {
             string nameJson = $@"{date.ToString("dd-MM-yyyy")}.json";
             if (string.IsNullOrEmpty(path))
             {
-                return false;
             }
             else
             {
@@ -38,7 +37,6 @@ namespace LeituraXml.Utils
                 var options = new JsonSerializerOptions { WriteIndented = true };
                 string jsonString = JsonSerializer.Serialize(Breaks, options);
                 File.WriteAllText(filePath, jsonString);
-                return true;
             }
         }
         private string getpath(string path)
