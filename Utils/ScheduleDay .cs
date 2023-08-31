@@ -25,12 +25,12 @@ namespace LeituraXml.Utils
             }
         }
 
-        private void parseJson(string path)
+        private bool parseJson(string path)
         {
             string nameJson = $@"{date.ToString("dd-MM-yyyy")}.json";
             if (string.IsNullOrEmpty(path))
             {
-                MessageBox.Show("O caminho não pode ser vazio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
             else
             {
@@ -38,7 +38,7 @@ namespace LeituraXml.Utils
                 var options = new JsonSerializerOptions { WriteIndented = true };
                 string jsonString = JsonSerializer.Serialize(Breaks, options);
                 File.WriteAllText(filePath, jsonString);
-                MessageBox.Show(" Json Salvo com Sucesso", "Salvo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return true;
             }
         }
         private string getpath(string path)
@@ -46,7 +46,6 @@ namespace LeituraXml.Utils
             string datePath = date.ToString("dd-MM-yyyy");
             if (string.IsNullOrEmpty(path))
             {
-                MessageBox.Show("Caminho não pode ser Vazio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
             string fullPath = @path;
@@ -59,7 +58,6 @@ namespace LeituraXml.Utils
             }
             else
             {
-                MessageBox.Show("A Data não pode ser vazia", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
             return fullPath;
@@ -80,7 +78,6 @@ namespace LeituraXml.Utils
             {
                 if (!File.Exists(fullPath[0]))
                 {
-                    MessageBox.Show("Arquivo não encontrado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
                 using (FileStream zipToOpen = new FileStream(fullPath[0], FileMode.Open))
@@ -106,7 +103,6 @@ namespace LeituraXml.Utils
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
                 throw;
             }
